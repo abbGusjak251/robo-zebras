@@ -22,6 +22,9 @@ public class PlaneFinder : MonoBehaviour
     [SerializeField]
     ARPlaneManager planeManager;
 
+    public Plane target;
+    private Plane offset;
+
     // Update is executed every frame
     // The logic here casts a ray to find out which plane we are looking at
     private void Update()
@@ -40,7 +43,7 @@ public class PlaneFinder : MonoBehaviour
                 var plane = planeManager.GetPlane(hits[0].trackableId);
 
                 // Sets planeInfoText with plane size
-                planeInfoText.text = "x: " + plane.size.x.ToString("F2") + " y: " + plane.size.y.ToString("F2") + "normal x: " + plane.normal.x.ToString("F2") + " y: " + plane.normal.y.ToString("F2") + " z: " + plane.normal.z.ToString("F2");
+                planeInfoText.text = "x: " + plane.size.x.ToString("F2") + " y: " + plane.size.y.ToString("F2") + " center x: " + plane.center.x.ToString("F2") + " y: " + plane.center.y.ToString("F2") + " z: " + plane.center.z.ToString("F2");
 
                 // A common use case could be to make sure the plane is large enough before beginning the AR experience.
                 // This example makes sure the plane is atleast 2x2 meters
@@ -48,6 +51,7 @@ public class PlaneFinder : MonoBehaviour
                 //{
                 //    eg StartGame();
                 //}
+                //transform.position = plane.infinitePlane;
             }
 
         }
