@@ -9,6 +9,7 @@ public class PlaneFinder2 : MonoBehaviour
     public ARRaycastManager raycastManager;
     public GameObject prefab;
     private Vector3 offset;
+    private int spawnRange = 5;
 
     List<ARRaycastHit> hits = new List<ARRaycastHit>();
     // Start is called before the first frame update
@@ -24,8 +25,9 @@ public class PlaneFinder2 : MonoBehaviour
         {
             if (hits.Count > 0)
             {
-                offset = new Vector3(Random.Range(-1,1),0,Random.Range(-1,1));
-                Instantiate(prefab, hits[0].pose.position + offset, Quaternion.identity, transform);
+                offset = new Vector3(Random.Range(-1*spawnRange,spawnRange),0,Random.Range(-1*spawnRange,spawnRange));
+                Quaternion rotation = Quaternion.Euler(0,Random.Range(0,360),0);
+                Instantiate(prefab, hits[0].pose.position + offset, rotation, transform);
             }
         }
     }
