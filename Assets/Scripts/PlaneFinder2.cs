@@ -9,7 +9,7 @@ public class PlaneFinder2 : MonoBehaviour
     public ARRaycastManager raycastManager;
     public GameObject prefab;
     private Vector3 offset;
-    private int spawnRange = 5;
+    private int spawnRange = 3;
 
     List<ARRaycastHit> hits = new List<ARRaycastHit>();
     // Start is called before the first frame update
