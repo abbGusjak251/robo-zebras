@@ -21,6 +21,7 @@ public class voiscooterDestroy : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other){
+        Debug.Log("Destroy this object");
        Destroy(other.gameObject);
     }
 };
