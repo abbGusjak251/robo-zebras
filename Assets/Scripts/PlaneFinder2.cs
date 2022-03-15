@@ -13,13 +13,10 @@ public class PlaneFinder2 : MonoBehaviour
 
     List<ARRaycastHit> hits = new List<ARRaycastHit>();
     // Start is called before the first frame update
-    void Update()
-    {
-
+    void Start() {
+        StartCoroutine(Place());
     }
-
-   
-    public void Place()
+    IEnumerator Place()
     {
         if (raycastManager.Raycast(new Vector2(Screen.width / 2, Screen.height / 2), hits))
         {
@@ -30,5 +27,6 @@ public class PlaneFinder2 : MonoBehaviour
                 Instantiate(prefab, hits[0].pose.position + offset, rotation, transform);
             }
         }
+        yield return new WaitForSeconds(5f);
     }
 }
