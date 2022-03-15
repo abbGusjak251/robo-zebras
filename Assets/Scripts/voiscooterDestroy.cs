@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.ARFoundation;
+using UnityEngine.XR.ARSubsystems;
+
 public class voiscooterDestroy : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -17,9 +20,7 @@ public class voiscooterDestroy : MonoBehaviour
 
     }
 
-    void OnCollisionEnter(Collision collision){
-       if (collision.gameObject.tag == "voi-scooter"){
-           Destroy(collision.gameObject);
-       }
+    private void OnTriggerEnter(Collider other){
+       Destroy(other.gameObject);
     }
 };
