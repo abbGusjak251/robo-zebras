@@ -154,7 +154,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 94
   m_CollisionDetection: 0
---- !u!65 &3938537688489187540
+--- !u!65 &5693352770575658639
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -165,18 +165,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.2602488, y: 0.30894947, z: 0.45804483}
-  m_Center: {x: 0.13012415, y: 0.14106393, z: 0.0116350055}
---- !u!65 &7447845715066509389
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1437639372421651387}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.50316966, y: 1.4690453, z: 1}
-  m_Center: {x: 0.49535376, y: 0.7935876, z: 0}
+  m_Size: {x: 1, y: 2.0227792, z: 0.48213357}
+  m_Center: {x: 0, y: 0.85570633, z: 0.034703642}

@@ -5,13 +5,21 @@ using UnityEngine;
 public class RandomColor : MonoBehaviour
 {
     public Color col;
-    Color[] colors;
+    private Color[] colors;
     // Start is called before the first frame update
     void Start()
     {
+        colors = new Color[3];
         colors[0] = Color.red;
         colors[1] = new Color32( 143 , 0 , 254, 1 );
         colors[2] = Color.green;
-        col = colors[Random.Range(0, colors.Length-1)];
+        col = colors[Random.Range(0, colors.Length)];
+        GetComponent<Renderer>().material.SetColor("_Color", col);
+    }
+    void OnTriggerEnter(Collider other) {
+        if(other.gameObject.tag == "lightsaber") {
+            other.gameObject.GetComponent<voiscooterDestroy>().gainCrystal(col);
+            Destroy(gameObject);
+        }
     }
 }
