@@ -8,6 +8,7 @@ public class PlaneFinder2 : MonoBehaviour
 {
     public ARRaycastManager raycastManager;
     public GameObject prefab;
+    public GameObject crystal;
     private Vector3 offset;
     private int spawnRange = 3;
     private float spawnDelay = 5f;
@@ -17,6 +18,7 @@ public class PlaneFinder2 : MonoBehaviour
     // Start is called before the first frame update
     void Start() {
         StartCoroutine(Place());
+        StartCoroutine(Despawn());
     }
     IEnumerator Place()
     {
@@ -24,9 +26,15 @@ public class PlaneFinder2 : MonoBehaviour
         {
             if (hits.Count > 0)
             {
+                
                 offset = new Vector3(Random.Range(-1*spawnRange,spawnRange),0,Random.Range(-1*spawnRange,spawnRange));
                 Quaternion rotation = Quaternion.Euler(0,Random.Range(0,360),0);
-                Instantiate(prefab, hits[0].pose.position + offset, rotation, transform);
+                int chanceForCrystal = Random.Range(0, 6);
+                if(chanceForCrystal > 5) {
+                    Instantiate(crystal, hits[0].pose.position + offset, rotation, transform);
+                } else {
+                    Instantiate(prefab, hits[0].pose.position + offset, rotation, transform);
+                }
             }
         }
         yield return new WaitForSeconds(spawnDelay);

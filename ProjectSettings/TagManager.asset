@@ -6,6 +6,7 @@ TagManager:
   tags:
   - voi-scooter
   - lightsaber
+  - crystal
   layers:
   - Default
   - TransparentFX
