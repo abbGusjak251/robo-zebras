@@ -12,6 +12,7 @@ public class voiscooterDestroy : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision){
        if(collision.gameObject.tag == "voi-scooter") {
+           GetComponent<ScoreCount>().ScooterDestroyed();
            Transform pos = collision.gameObject.transform;
            GameObject partInstance = Instantiate(partSystem, pos);
            partInstance.GetComponent<ParticleSystem>().Play();

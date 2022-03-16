@@ -12,7 +12,6 @@ public class PlaneFinder2 : MonoBehaviour
     private Vector3 offset;
     private int spawnRange = 3;
     private float spawnDelay = 5f;
-    private float destroyDelay = 60f;
     private int counter = 0;
 
     List<ARRaycastHit> hits = new List<ARRaycastHit>();
