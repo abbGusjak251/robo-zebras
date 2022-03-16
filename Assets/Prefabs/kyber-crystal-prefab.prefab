@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: -7511558181221131132}
   - component: {fileID: 7056553067726566942}
   - component: {fileID: 5506926424689394861}
+  - component: {fileID: 6101993428059449965}
   m_Layer: 0
   m_Name: kyber-crystal-prefab
-  m_TagString: Untagged
+  m_TagString: crystal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,3 +119,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6101993428059449965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1471303791010053767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1177be4e2a2e96c41bc66eff9f42d2a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

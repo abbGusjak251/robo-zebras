@@ -5,10 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - voi-scooter
-<<<<<<< HEAD
-=======
   - lightsaber
->>>>>>> e9b7b8d2ac302dcd38286e2f3c32435873fe957c
+  - crystal
   layers:
   - Default
   - TransparentFX
