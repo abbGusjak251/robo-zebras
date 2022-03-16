@@ -10,6 +10,8 @@ public class PlaneFinder2 : MonoBehaviour
     public GameObject prefab;
     private Vector3 offset;
     private int spawnRange = 3;
+    private float spawnDelay = 5f;
+    private float destroyDelay = 60f;
 
     List<ARRaycastHit> hits = new List<ARRaycastHit>();
     // Start is called before the first frame update
@@ -27,6 +29,11 @@ public class PlaneFinder2 : MonoBehaviour
                 Instantiate(prefab, hits[0].pose.position + offset, rotation, transform);
             }
         }
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(spawnDelay);
+        StartCoroutine(Place());
+    }
+    IEnumerator Despawn() {
+        yield return new WaitForSeconds(destroyDelay);
+        Destroy(gameObject);
     }
 }

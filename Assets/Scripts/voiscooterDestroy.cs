@@ -6,6 +6,7 @@ using UnityEngine.XR.ARSubsystems;
 
 public class voiscooterDestroy : MonoBehaviour
 {
+    public GameObject partSystem;
     // Start is called before the first frame update
     void Start()
 
@@ -20,7 +21,12 @@ public class voiscooterDestroy : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other){
-       Destroy(other.gameObject);
+    private void OnCollisionEnter(Collision collision){
+       if(collision.gameObject.tag == "voi-scooter") {
+           Transform pos = collision.gameObject.transform;
+           GameObject partInstance = Instantiate(partSystem, pos);
+           partInstance.GetComponent<ParticleSystem>().Play();
+           Destroy(collision.gameObject);
+       }
     }
 };
